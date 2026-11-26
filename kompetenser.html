@@ -20,3 +20,30 @@
     </p>
 
     <nav class="main-nav" aria-label="Huvudmeny">
+        <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
+           aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
+        <button type="button" class="main-nav__toggle"
+              data-js-action="toggle-menu"
+              aria-expanded="true"
+              aria-controls="main-menu">
+        Meny
+      </button>
+
+      <ul class="main-nav__list" id="main-menu" data-js-target="menu">
+        <li class="main-nav__item"><a class="main-nav__link" href="index.html">Om mig</a></li>
+        <!-- aria-current talar om för skärmläsaren vilken sida som är aktiv just nu -->
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="kompetenser.html" aria-current="page">Kompetenser</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="projekt.html">Projekt</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="utbildning.html">Utbildning och erfarenhet</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page" id="main">
+    <h1 class="page__title">Kompetenser</h1>
+    <p class="page__intro">Här ser du vad jag kan, hur säker jag känner mig och var jag har använt kunskapen.</p>
+
+    <section class="skills" aria-labelledby="skills-heading">
+      <h2 class="skills__title" id="skills-heading">Tekniska kompetenser</h2>
