@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="sv">
-
-<!-- HEAD: inställningar, titel och beskrivning för sökmotorer (SEO) -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projekt – Sam Lind</title>
-  <meta name="description" content="Projekt som Sam Lind har gjort i skolan och på fritiden, bland annat i C#, Python och HTML.">
-  <link rel="icon" href="images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <title>Utbildning och erfarenhet - Sam Lind</title>
+    <meta name="description" content="Sam Linds utbildning inom IT-säkerhet och mjukvarutestning samt arbetslivserfarenhet.">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- defer gör att skriptet väntar tills hela HTML-sidan har laddats klart -->
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+    <!-- Låter tangentbordsanvändare hoppa direkt förbi menyn till main -->
+    <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
 
-  <!-- HEADER: sidhuvud och meny, samma på alla sidor -->
   <header class="site-header">
     <p class="site-header__name">
       <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
     </p>
 
     <nav class="main-nav" aria-label="Huvudmeny">
-      <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
+        <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
            aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
-      <button type="button" class="main-nav__toggle"
+        <button type="button" class="main-nav__toggle"
               data-js-action="toggle-menu"
               aria-expanded="true"
               aria-controls="main-menu">
@@ -33,64 +32,53 @@
       <ul class="main-nav__list" id="main-menu" data-js-target="menu">
         <li class="main-nav__item"><a class="main-nav__link" href="index.html">Om mig</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="kompetenser.html">Kompetenser</a></li>
-        <!-- Den här sidan är aktiv: aria-current för skärmläsaren, --active för CSS -->
-        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="projekt.html" aria-current="page">Projekt</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="utbildning.html">Utbildning och erfarenhet</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="projekt.html">Projekt</a></li>
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="utbildning.html" aria-current="page">Utbildning och erfarenhet</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN: sidans innehåll. h1 Projekt → h2 Mina projekt → h3 för varje projekt -->
   <main class="page" id="main">
-    <h1 class="page__title">Projekt</h1>
-    <p class="page__intro">Här är projekt jag har gjort i utbildningen och på egen hand.</p>
+    <h1 class="page__title">Utbildning och erfarenhet</h1>
+    <p class="page__intro">Min utbildning och mina jobb, med det senaste först.</p>
 
-    <section class="projects" aria-labelledby="projects-heading">
-      <h2 class="projects__title" id="projects-heading">Mina projekt</h2>
+    <!-- aria-labelledby kopplar ihop sektionen med rubrikens unika id nedan -->
+    <section class="timeeline" aria-labelledby="education-heading">
+      <h2 class="timeline__title" id="education-heading">Utbildning</h2>
+      <!-- Använder <ol> istället för <ul> eftersom den kronologiska ordningen har betydelse -->
+      <ol class="timeline__list">
+        <!-- BEM-modifiern --education gör att utbildning kan stylas annorlunda än jobb i CSS -->
+        <li class="timeline__item timeline__item--education">
+          <h3 class="timeline__heading">IT-säkerhet och mjukvarutestning, Högskolan Dalarna</h3>
+          <!-- time-taggen med datetime ger maskinläsbara datum för sökmotorer och skärmläsare -->
+          <p class="timeline__date"><time datetime="2025-09">September 2025</time> – pågår</p>
+          <p class="timeline__text">Högskoleprogram på 180 hp med programmering, testning, nätverk och IT-säkerhet.</p>
+        </li>
+        <li class="timeline__item timeline__item--education">
+          <h3 class="timeline__heading">Teknikprogrammet, gymnasiet</h3>
+          <p class="timeline__date"><time datetime="2021-08">Augusti 2021</time> – <time datetime="2024-06">juni 2024</time></p>
+          <p class="timeline__text">Inriktning informations- och medieteknik.</p>
+        </li>
+      </ol>
+    </section>
 
-      <!-- JS: När man klickar på en filterknapp ska bara de projekt i listan (data-js-target="project-list")
-           visas som har samma data-category som knappen. "alla" visar alla projekt.
-           Knappen man klickat på får aria-pressed="true", de andra "false". -->
-      <div class="projects__filter" role="group" aria-label="Filtrera projekt">
-        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="alla" aria-pressed="true">Alla projekt</button>
-        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="skola" aria-pressed="false">Skolprojekt</button>
-        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="eget" aria-pressed="false">Egna projekt</button>
-      </div>
-
-      <!-- TARGET: här visar eller döljer JS projekten. Varje article har data-category (DATA) -->
-      <div class="projects__list" data-js-target="project-list">
-        <!-- ARTICLE: varje projekt är en fristående del. Modifier --school = skolprojekt, --own = eget projekt -->
-        <article class="project-card project-card--school" data-category="skola">
-          <h3 class="project-card__title">Biluthyrning – bokningstjänst i C#</h3>
-          <p class="project-card__meta">Skolprojekt i grupp, hösten 2026</p>
-          <p class="project-card__text">Ett konsolprogram där kunder kan boka, ändra och avboka hyrbilar. Vi planerade arbetet i GitHub Projects och skrev klasser för kunder, bilar och bokningar.</p>
-          <p class="project-card__tech">Tekniker: C#, .NET och Git</p>
-        </article>
-
-        <article class="project-card project-card--school" data-category="skola">
-          <h3 class="project-card__title">Testplan för en webbshop</h3>
-          <p class="project-card__meta">Skolprojekt i mjukvarutestning, våren 2026</p>
-          <p class="project-card__text">Jag skrev en testplan och 30 testfall för köpflödet i en webbshop och rapporterade buggarna jag hittade.</p>
-          <p class="project-card__tech">Tekniker: testfall, felrapporter och utforskande testning</p>
-        </article>
-
-        <article class="project-card project-card--own" data-category="eget">
-          <h3 class="project-card__title">Lösenordskontroll i Python</h3>
-          <p class="project-card__meta">Eget projekt, sommaren 2026</p>
-          <p class="project-card__text">Ett litet program som kontrollerar om ett lösenord är tillräckligt starkt och förklarar varför det är svagt.</p>
-          <p class="project-card__tech">Tekniker: Python</p>
-        </article>
-
-        <article class="project-card project-card--school" data-category="skola">
-          <h3 class="project-card__title">Den här portfolion</h3>
-          <p class="project-card__meta">Skolprojekt i grupp, hösten 2026</p>
-          <p class="project-card__text">En webbplats byggd med semantisk HTML, BEM-klasser för CSS och data-js-krokar för JavaScript, så att de tre lagren hålls isär.</p>
-          <p class="project-card__tech">Tekniker: HTML, CSS, JavaScript och PHP</p>
-          <a class="project-card__link" href="https://github.com/">Källkoden till portfolion på GitHub</a>
-        </article>
-      </div>
+    <section class="timeline" aria-labelledby="work-heading">
+      <h2 class="timeline__title" id="work-heading">Arbetslivserfarenhet</h2>
+      <ol class="timeline__list">
+        <!-- BEM-modifiern --work skiljer arbetslivserfarenhet från utbildning i samma grundblock -->
+        <li class="timeline__item timeline__item--work">
+          <h3 class="timeline__heading">Lagerarbetare, livsmedelslager</h3>
+          <p class="timeline__date"><time datetime="2025-10">Oktober 2025</time> – pågår, deltid</p>
+          <p class="timeline__text">Plockar och packar beställningar. Jag har lärt mig att arbeta noggrant och följa rutiner.</p>
+        </li>
+        <li class="timeline__item timeline__item--work">
+          <h3 class="timeline__heading">Sommarjobb inom IT-support, kommun</h3>
+          <p class="timeline__date"><time datetime="2024-06">Juni 2024</time> – <time datetime="2024-08">augusti 2024</time></p>
+          <p class="timeline__text">Hjälpte personal med datorer, lösenord och skrivare.</p>
+        </li>
+      </ol> 
     </section>
 </main> 
 <footer class="site-footer">
@@ -102,13 +90,5 @@
     </ul>
   </footer>
 
-  <!-- FOOTER: sidfot, samma på alla sidor -->
-  <footer class="site-footer">
-    <p class="site-footer__text">© 2026 Sam Lind. Skolprojekt: portfolio för en fiktiv person.</p>
-    <ul class="site-footer__list">
-      <li class="site-footer__item"><a class="site-footer__link" href="mailto:sam.lind@example.com">Mejla Sam Lind</a></li>
-      <li class="site-footer__item"><a class="site-footer__link" href="https://www.linkedin.com/">Sam Lind på LinkedIn</a></li>
-      <li class="site-footer__item"><a class="site-footer__link" href="https://github.com/">Sam Lind på GitHub</a></li>
-    </ul>
-  </footer>
 </body>
+</html>
