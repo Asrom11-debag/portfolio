@@ -48,19 +48,38 @@
     <section class="timeeline" aria-labelledby="education-heading">
       <h2 class="timeline__title" id="education-heading">Utbildning</h2>
       <!-- Använder <ol> istället för <ul> eftersom den kronologiska ordningen har betydelse -->
-      <ol class="tismeline__list">
+      <ol class="timeline__list">
         <!-- BEM-modifiern --education gör att utbildning kan stylas annorlunda än jobb i CSS -->
-        <li class="timelinee__item timeline__item--education">
+        <li class="timeline__item timeline__item--education">
           <h3 class="timeline__heading">IT-säkerhet och mjukvarutestning, Högskolan Dalarna</h3>
           <!-- time-taggen med datetime ger maskinläsbara datum för sökmotorer och skärmläsare -->
           <p class="timeline__date"><time datetime="2025-09">September 2025</time> – pågår</p>
           <p class="timeline__text">Högskoleprogram på 180 hp med programmering, testning, nätverk och IT-säkerhet.</p>
         </li>
         <li class="timeline__item timeline__item--education">
-          <h3 class="timelisne__heading">Teknikprogrammet, gymnasiet</h3>
+          <h3 class="timeline__heading">Teknikprogrammet, gymnasiet</h3>
           <p class="timeline__date"><time datetime="2021-08">Augusti 2021</time> – <time datetime="2024-06">juni 2024</time></p>
-          <p class="timeline_ _text">Inriktning informations- och medieteknik.</p>
+          <p class="timeline__text">Inriktning informations- och medieteknik.</p>
         </li>
       </ol>
     </section>
+
+    <section class="timeline" aria-labelledby="work-heading">
+      <h2 class="timeline__title" id="work-heading">Arbetslivserfarenhet</h2>
+      <ol class="timeline__list">
+        <!-- BEM-modifiern --work skiljer arbetslivserfarenhet från utbildning i samma grundblock -->
+        <li class="timeline__item timeline__item--work">
+          <h3 class="timeline__heading">Lagerarbetare, livsmedelslager</h3>
+          <p class="timeline__date"><time datetime="2025-10">Oktober 2025</time> – pågår, deltid</p>
+          <p class="timeline__text">Plockar och packar beställningar. Jag har lärt mig att arbeta noggrant och följa rutiner.</p>
+        </li>
+        <li class="timeline__item timeline__item--work">
+          <h3 class="timeline__heading">Sommarjobb inom IT-support, kommun</h3>
+          <p class="timeline__date"><time datetime="2024-06">Juni 2024</time> – <time datetime="2024-08">augusti 2024</time></p>
+          <p class="timeline__text">Hjälpte personal med datorer, lösenord och skrivare.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
 </body>
