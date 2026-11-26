@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Utbildning och erfarenhet - Sam Lind</title>
-    <meta name="description" content="Sam Linds utbildning inom IT-säkerhet och mjukvarutestning samt arbetslivserfarenhet.">
+     <meta name="description" content="Sam Linds utbildning inom IT-säkerhet och mjukvarutestning samt arbetslivserfarenhet.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
-    <!-- defer gör att skriptet väntar tills hela HTML-sidan har laddats klart -->
+     <!-- defer gör att skriptet väntar tills hela HTML-sidan har laddats klart -->
     <script src="js/script.js" defer></script>
-</head>
+</head> 
 <body>
     <!-- Låter tangentbordsanvändare hoppa direkt förbi menyn till main -->
     <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
 
-  <header class="site-header">
+  <header class="site-header"> 
     <p class="site-header__name">
       <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
-    </p>
-
+    </p> 
+ 
     <nav class="main-nav" aria-label="Huvudmeny">
         <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
            aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
@@ -26,7 +26,7 @@
               data-js-action="toggle-menu"
               aria-expanded="true"
               aria-controls="main-menu">
-        Meny
+        Meny 
       </button>
 
       <ul class="main-nav__list" id="main-menu" data-js-target="menu">
@@ -37,11 +37,73 @@
         <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
       </ul>
-    </nav>
+     </nav>
   </header>
 
-  <main class="page" id="main">
+    <main class="page" id="main">
     <h1 class="page__title">Utbildning och erfarenhet</h1>
     <p class="page__intro">Min utbildning och mina jobb, med det senaste först.</p>
     
+ <!-- MAIN: sidans innehåll. h1 Projekt → h2 Mina projekt → h3 för varje projekt -->
+  <main class="page" id="main">
+    <h1 class="page__title">Projekt</h1>
+    <p class="page__intro">Här är projekt jag har gjort i utbildningen och på egen hand.</p>
+
+    <section class="projects" aria-labelledby="projects-heading">
+      <h2 class="projects__title" id="projects-heading">Mina projekt</h2>
+
+      <!-- JS: När man klickar på en filterknapp ska bara de projekt i listan (data-js-target="project-list")
+           visas som har samma data-category som knappen. "alla" visar alla projekt.
+           Knappen man klickat på får aria-pressed="true", de andra "false". -->
+      <div class="projects__filter" role="group" aria-label="Filtrera projekt">
+        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="alla" aria-pressed="true">Alla projekt</button>
+        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="skola" aria-pressed="false">Skolprojekt</button>
+        <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="eget" aria-pressed="false">Egna projekt</button>
+      </div>
+
+      <!---TARGET: här visar eller döljer JS projekten. Varje article har data-category (DATA) -->
+      <div class="projects__list" data-js-target="project-list">
+        <!-- ARTICLE: varje projekt är en fristående del. Modifier --school = skolprojekt, --own = eget projekt -->
+        <article class="project-card project-card--school" data-category="skola">
+          <h3 class="project-card__title">Biluthyrning – bokningstjänst i C#</h3>
+          <p class="project-card__meta">Skolprojekt i grupp, hösten 2026</p>
+          <p class="project-card__text">Ett konsolprogram där kunder kan boka, ändra och avboka hyrbilar. Vi planerade arbetet i GitHub Projects och skrev klasser för kunder, bilar och bokningar.</p>
+          <p class="project-card__tech">Tekniker: C#, .NET och Git</p>
+        </article>
+
+        <article class="project-card project-card--school" data-category="skola">
+          <h3 class="project-card__title">Testplan för en webbshop</h3>
+          <p class="project-card__meta">Skolprojekt i mjukvarutestning, våren 2026</p>
+          <p class="project-card__text">Jag skrev en testplan och 30 testfall för köpflödet i en webbshop och rapporterade buggarna jag hittade.</p>
+          <p class="project-card__tech">Tekniker: testfall, felrapporter och utforskande testning</p>
+        </article>
+
+        <article class="project-card project-card--own" data-category="eget">
+          <h3 class="project-card__title">Lösenordskontroll i Python</h3>
+          <p class="project-card__meta">Eget projekt, sommaren 2026</p>
+          <p class="project-card__text">Ett litet program som kontrollerar om ett lösenord är tillräckligt starkt och förklarar varför det är svagt.</p>
+          <p class="project-card__tech">Tekniker: Python</p>
+        </article>
+ 
+        <article class="project-card project-card--school" data-category="skola">
+          <h3 class="project-card__title">Den här portfolion</h3>
+          <p class="project-card__meta">Skolprojekt i grupp, hösten 2026</p>
+          <p class="project-card__text">En webbplats byggd med semantisk HTML, BEM-klasser för CSS och data-js-krokar för JavaScript, så att de tre lagren hålls isär.</p>
+          <p class="project-card__tech">Tekniker: HTML, CSS, JavaScript och PHP</p>
+          <a class="project-card__link" href="https://github.com/">Källkoden till portfolion på GitHub</a>
+        </article>
+      </div>
+    </section>
+  </main>
+ 
+  <!-- FOOTER: sidfot, samma på alla sidor -->
+  <footer class="site-footer">
+    <p class="site-footer__text">© 2026 Sam Lind. Skolprojekt: portfolio för en fiktiv person.</p>
+    <ul class="site-footer__list">
+      <li class="site-footer__item"><a class="site-footer__link" href="mailto:sam.lind@example.com">Mejla Sam Lind</a></li>
+      <li class="site-footer__item"><a class="site-footer__link" href="https://www.linkedin.com/">Sam Lind på LinkedIn</a></li>
+      <li class="site-footer__item"><a class="site-footer__link" href="https://github.com/">Sam Lind på GitHub</a></li>
+    </ul>
+  </footer>
 </body>
+</html>
