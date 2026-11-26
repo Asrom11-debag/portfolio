@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!-- HEAD: inställningar, titel och sökmotorer (SEO) -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projekt – Sam Lind</title>
+  <meta name="description" content="Projekt som Sam Lind har gjort i skolan och på fritiden, bland annat i C#, Python och HTML.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+
+  <!-- HEADER: sidhuvud och meny, samma på alla sidor -->
+  <header class="site-header">
+    <p class="site-header__name">
+      <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
+    </p>
+
+    <nav class="main-nav" aria-label="Huvudmeny">
+      <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
+           aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
+      <button type="button" class="main-nav__toggle"
+              data-js-action="toggle-menu"
+              aria-expanded="true"
+              aria-controls="main-menu">
+        Meny
+    </button>
+
+      <ul class="main-nav__list" id="main-menu" data-js-target="menu">
+        <li class="main-nav__item"><a class="main-nav__link" href="index.html">Om mig</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="kompetenser.html">Kompetenser</a></li>
+        <!-- Den här sidan är aktiv: aria-current för skärmläsaren, --active för CSS -->
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="projekt.html" aria-current="page">Projekt</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="utbildning.html">Utbildning och erfarenhet</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
