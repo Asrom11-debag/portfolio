@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1">
-    <title>Utbildning och erfarenhet - Sam Lind</title>
-     <meta name="description" content="Sam Linds utbildning inom IT-säkerhet och mjukvarutestning samt arbetslivserfarenhet.">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style.css">
-     <!-- defer gör att skriptet väntar tills hela HTML-sidan har laddats klart -->
-    <script src="js/script.js" defer></script>
-</head> 
-<body>
-    <!-- Låter tangentbordsanvändare hoppa direkt förbi menyn till main -->
-    <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
 
-  <header class="site-header"> 
+<!-- HEAD: inställningar, titel och beskrivning för sökmotorer (SEO) -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projekt – Sam Lind</title>
+  <meta name="description" content="Projekt som Sam Lind har gjort i skolan och på fritiden, bland annat i C#, Python och HTML.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+
+  <!-- HEADER: sidhuvud och meny, samma på alla sidor -->
+  <header class="site-header">
     <p class="site-header__name">
       <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
-    </p> 
- 
+    </p>
+
     <nav class="main-nav" aria-label="Huvudmeny">
-        <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
+      <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
            aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
-        <button type="button" class="main-nav__toggle"
+      <button type="button" class="main-nav__toggle"
               data-js-action="toggle-menu"
               aria-expanded="true"
               aria-controls="main-menu">
-        Meny 
+        Meny
       </button>
 
       <ul class="main-nav__list" id="main-menu" data-js-target="menu">
         <li class="main-nav__item"><a class="main-nav__link" href="index.html">Om mig</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="kompetenser.html">Kompetenser</a></li>
-        <li class="main-nav__item"><a class="main-nav__link" href="projekt.html">Projekt</a></li>
-        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="utbildning.html" aria-current="page">Utbildning och erfarenhet</a></li>
+        <!-- Den här sidan är aktiv: aria-current för skärmläsaren, --active för CSS -->
+        <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="projekt.html" aria-current="page">Projekt</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="utbildning.html">Utbildning och erfarenhet</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
         <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
       </ul>
-     </nav>
+    </nav>
   </header>
 
-    <main class="page" id="main">
-    <h1 class="page__title">Utbildning och erfarenhet</h1>
-    <p class="page__intro">Min utbildning och mina jobb, med det senaste först.</p>
-    
- <!-- MAIN: sidans innehåll. h1 Projekt → h2 Mina projekt → h3 för varje projekt -->
+  <!-- MAIN: sidans innehåll. h1 Projekt → h2 Mina projekt → h3 för varje projekt -->
   <main class="page" id="main">
     <h1 class="page__title">Projekt</h1>
     <p class="page__intro">Här är projekt jag har gjort i utbildningen och på egen hand.</p>
@@ -61,7 +59,7 @@
         <button type="button" class="projects__filter-button" data-js-action="filter-projects" data-category="eget" aria-pressed="false">Egna projekt</button>
       </div>
 
-      <!---TARGET: här visar eller döljer JS projekten. Varje article har data-category (DATA) -->
+      <!-- TARGET: här visar eller döljer JS projekten. Varje article har data-category (DATA) -->
       <div class="projects__list" data-js-target="project-list">
         <!-- ARTICLE: varje projekt är en fristående del. Modifier --school = skolprojekt, --own = eget projekt -->
         <article class="project-card project-card--school" data-category="skola">
@@ -84,7 +82,7 @@
           <p class="project-card__text">Ett litet program som kontrollerar om ett lösenord är tillräckligt starkt och förklarar varför det är svagt.</p>
           <p class="project-card__tech">Tekniker: Python</p>
         </article>
- 
+
         <article class="project-card project-card--school" data-category="skola">
           <h3 class="project-card__title">Den här portfolion</h3>
           <p class="project-card__meta">Skolprojekt i grupp, hösten 2026</p>
@@ -95,7 +93,7 @@
       </div>
     </section>
   </main>
- 
+
   <!-- FOOTER: sidfot, samma på alla sidor -->
   <footer class="site-footer">
     <p class="site-footer__text">© 2026 Sam Lind. Skolprojekt: portfolio för en fiktiv person.</p>
