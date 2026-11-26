@@ -45,5 +45,37 @@
     <h1 class="page__title">Kompetenser</h1>
     <p class="page__intro">Här ser du vad jag kan, hur säker jag känner mig och var jag har använt kunskapen.</p>
 
+    <!-- aria-labelledby kopplar ihop sektionen med rubrikens id nedan -->
     <section class="skills" aria-labelledby="skills-heading">
       <h2 class="skills__title" id="skills-heading">Tekniska kompetenser</h2>
+
+      <!-- JS: När man klickar på en filterknapp ska bara de rader i tabellen (data-js-target="skill-list")
+           visas som har samma data-category som knappen. "alla" visar alla rader.
+           Knappen man klickat på får aria-pressed="true", de andra "false". -->
+      <div class="skills__filter" role="group" aria-label="Filtrera kompetenser efter område">
+        <button type="button" class="skills__filter-button" data-js-action="filter-skills" data-category="alla" aria-pressed="true">Alla</button>
+        <button type="button" class="skills__filter-button" data-js-action="filter-skills" data-category="programmering" aria-pressed="false">Programmering</button>
+        <button type="button" class="skills__filter-button" data-js-action="filter-skills" data-category="webb" aria-pressed="false">Webb</button>
+        <button type="button" class="skills__filter-button" data-js-action="filter-skills" data-category="test" aria-pressed="false">Test och säkerhet</button>
+      </div>
+
+      <table class="skills__table">
+        <caption class="skills__caption">Mina kompetenser, nivå och var jag har använt dem</caption>
+        <thead class="skills__head">
+          <tr class="skills__row">
+            <!-- scope="col" och scope="row" hjälper skärmläsare att koppla varje cell till rätt rubrik -->
+            <th class="skills__heading" scope="col">Kompetens</th>
+            <th class="skills__heading" scope="col">Område</th>
+            <th class="skills__heading" scope="col">Nivå</th>
+            <th class="skills__heading" scope="col">Använt i</th>
+          </tr>
+        </thead>
+        <tbody class="skills__body" data-js-target="skill-list">
+          <tr class="skills__row" data-category="programmering">
+            <th class="skills__heading" scope="row">C#</th>
+            <td class="skills__cell">Programmering</td>
+            <td class="skills__cell">Bra</td>
+            <td class="skills__cell">Kursprojekt med biluthyrning</td>
+          </tr>
+
+      
