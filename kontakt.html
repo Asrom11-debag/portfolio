@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    
+    <!-- Teckenkodning och anpassning till mobilskärmar -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakt – Sam Lind</title>
+
+    <!-- Beskrivning av sidan för sökmotorer -->
+
+    <meta
+      name="description"
+      content="Kontakta Sam Lind via e-post, LinkedIn, GitHub eller kontaktformuläret om jobb, praktik eller samarbete."
+    />
+
+    <!-- Ikon, CSS och JavaScript (defer = körs när sidan laddats) -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+
+    <!-- Genväg till huvudinnehållet för tangentbordsanvändare -->
+    <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+
+    <!-- Sidhuvud med sidans namn och huvudmeny -->
+    <header class="site-header">
+      <p class="site-header__name">
+        <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
+      </p>
+
+      <!-- Huvudmenyn, aria-label beskriver menyn för skärmläsare -->
+      <nav class="main-nav" aria-label="Huvudmeny">
+        <!-- Knapp som visar och döljer menyn med JavaScript -->
+        <button
+          type="button"
+          class="main-nav__toggle"
+          data-js-action="toggle-menu"
+          aria-expanded="true"
+          aria-controls="main-menu"
+        >
+          Meny
+        </button>
+
+        <!-- Menylänkar till sidorna i portfolion -->
+        <ul class="main-nav__list" id="main-menu" data-js-target="menu">
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="index.html">Om mig</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

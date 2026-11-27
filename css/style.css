@@ -1,0 +1,149 @@
+/* 1. style.css är CSS-lagret: det styr bara hur sidan SER UT.
+
+   Klassnamnen följer BEM: block, block__element och block__element--modifier.
+
+   Reglerna får vara tomma {} – uppgiften kräver bara klassnamnen som finns i HTML. */
+
+/* 2. Delar som finns på ALLA sidor: hoppa-länk, sidhuvud, meny, sidinnehåll och sidfot */
+.skip-link {}
+.site-header {}
+.site-header__name {}
+.site-header__link {}
+.main-nav {}
+.main-nav__toggle {}
+.main-nav__list {}
+.main-nav__item {}
+.main-nav__link {}
+/* 3. Modifier (--): markerar länken till den sida man är på */
+.main-nav__link--active {}
+.page {}
+.page__title {}
+.page__intro {}
+.site-footer {}
+.site-footer__text {}
+.site-footer__list {}
+.site-footer__item {}
+.site-footer__link {}
+
+/* 4. Om mig (index.html) */
+.profile {}
+.profile__title {}
+.profile__figure {}
+.profile__image {}
+.profile__caption {}
+.profile__text {}
+.goals {}
+.goals__title {}
+.goals__text {}
+.goals__list {}
+.goals__item {}
+.shortcuts {}
+.shortcuts__title {}
+.shortcuts__list {}
+.shortcuts__item {}
+.shortcuts__link {}
+
+/* 5. Kompetenser (kompetenser.html) */
+.skills {}
+.skills__title {}
+.skills__filter {}
+.skills__filter-button {}
+.skills__table {}
+.skills__caption {}
+.skills__head {}
+.skills__body {}
+.skills__row {}
+.skills__heading {}
+.skills__cell {}
+.soft-skills {}
+.soft-skills__title {}
+.soft-skills__list {}
+.soft-skills__item {}
+
+/* 6. Projekt (projekt.html). --school och --own skiljer skolprojekt från egna projekt */
+.projects {}
+.projects__title {}
+.projects__filter {}
+.projects__filter-button {}
+.projects__list {}
+.project-card {}
+.project-card--school {}
+.project-card--own {}
+.project-card__title {}
+.project-card__meta {}
+.project-card__text {}
+.project-card__tech {}
+.project-card__link {}
+
+/* 7. Utbildning och erfarenhet (utbildning.html). Blocket timeline används två gånger */
+.timeline {}
+.timeline__title {}
+.timeline__list {}
+.timeline__item {}
+.timeline__item--education {}
+.timeline__item--work {}
+.timeline__heading {}
+.timeline__date {}
+.timeline__text {}
+
+/* 8. Certifikat och språk (certifikat.html) */
+.certificates {}
+.certificates__title {}
+.certificates__table {}
+.certificates__caption {}
+.certificates__row {}
+.certificates__row--planned {}
+.certificates__heading {}
+.certificates__cell {}
+.languages {}
+.languages__title {}
+.languages__list {}
+.languages__name {}
+.languages__level {}
+.extras {}
+.extras__title {}
+.extras__text {}
+
+/* 9. Kontakt (kontakt.html) och svarssidan (tack.php) */
+.contact {}
+.contact__title {}
+.contact__list {}
+.contact__item {}
+.contact__link {}
+.contact__copy-button {}
+.contact__message {}
+.contact-form {}
+.contact-form__title {}
+.contact-form__intro {}
+.contact-form__form {}
+.contact-form__field {}
+.contact-form__label {}
+.contact-form__label--inline {}
+.contact-form__input {}
+.contact-form__select {}
+.contact-form__fieldset {}
+.contact-form__legend {}
+.contact-form__option {}
+.contact-form__radio {}
+.contact-form__textarea {}
+.contact-form__help {}
+.contact-form__button {}
+.thanks {}
+.thanks__title {}
+.thanks__text {}
+.thanks__text--highlight {}
+.thanks__summary {}
+.thanks__label {}
+.thanks__value {}
+.thanks__link {}
+
+/* 10. Den enda riktiga stilregeln: länkarna blir minst 24 px höga så att de är
+   lätta att klicka på (WCAG 2.5.8). Behövs för 100 i Lighthouse Accessibility. */
+.main-nav__link,
+.shortcuts__link,
+.site-footer__link,
+.contact__link {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+}
