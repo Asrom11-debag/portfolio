@@ -1,5 +1,7 @@
 /* 1. style.css är CSS-lagret: det styr bara hur sidan SER UT.
+
    Klassnamnen följer BEM: block, block__element och block__element--modifier.
+   
    Reglerna får vara tomma {} – uppgiften kräver bara klassnamnen som finns i HTML. */
 
 /* 2. Delar som finns på ALLA sidor: hoppa-länk, sidhuvud, meny, sidinnehåll och sidfot */
