@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="sv">
   <head>
-    
     <!-- Teckenkodning och anpassning till mobilskärmar -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,7 +19,6 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-
     <!-- Genväg till huvudinnehållet för tangentbordsanvändare -->
     <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
 
@@ -48,8 +46,152 @@
           <li class="main-nav__item">
             <a class="main-nav__link" href="index.html">Om mig</a>
           </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="kompetenser.html">Kompetenser</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="projekt.html">Projekt</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="utbildning.html"
+              >Utbildning och erfarenhet</a
+            >
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="certifikat.html"
+              >Certifikat och språk</a
+            >
+            <!-- Aktiv länk, aria-current visar att man är på kontaktsidan -->
+          </li>
+          <li class="main-nav__item">
+            <a
+              class="main-nav__link main-nav__link--active"
+              href="kontakt.html"
+              aria-current="page"
+              >Kontakt</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
+
+    <!-- Huvudinnehållet, id="main" är dit skip-länken hoppar -->
+    <main class="page" id="main">
+      <h1 class="page__title">Kontakt</h1>
+      <p class="page__intro">
+        Vill du erbjuda jobb, praktik eller ett samarbete? Hör av dig!
+      </p>
+
+      <!-- Kontaktsektion med länkar till e-post, LinkedIn och GitHub -->
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 class="contact__title" id="contact-heading">Kontakta mig direkt</h2>
+        <ul class="contact__list">
+          <li class="contact__item">
+            <a class="contact__link" href="mailto:sam.lind@example.com"
+              >Mejla mig på sam.lind@example.com</a
+            >
+          </li>
+          <li class="contact__item">
+            <a class="contact__link" href="https://www.linkedin.com/"
+              >Min profil på LinkedIn</a
+            >
+          </li>
+          <li class="contact__item">
+            <a class="contact__link" href="https://github.com/"
+              >Min kod på GitHub</a
+            >
+          </li>
+        </ul>
+
+        <!-- Knapp som kopierar e-postadressen med JavaScript, meddelandet under läses upp för skärmläsare -->
+        <button
+          type="button"
+          class="contact__copy-button"
+          data-js-action="copy-email"
+          data-email="sam.lind@example.com"
+        >
+          Kopiera e-postadressen
+        </button>
+        <p
+          class="contact__message"
+          data-js-target="copy-message"
+          aria-live="polite"
+        ></p>
+      </section>
+
+      <!-- Kontaktformulär -->
+      <section class="contact-form" aria-labelledby="form-heading">
+        <h2 class="contact-form__title" id="form-heading">
+          Skicka ett meddelande
+        </h2>
+        <p class="contact-form__intro">
+          Fält markerade med (obligatoriskt) måste fyllas i.
+        </p>
+         
+        <!-- Formuläret skickas till tack.php med metoden post -->
+        <form class="contact-form__form" action="tack.php" method="post">
+          <!-- Namn och e-post är obligatoriska (required) -->
+          <p class="contact-form__field">
+            <label class="contact-form__label" for="name"
+              >Namn (obligatoriskt)</label
+            >
+            <input
+              class="contact-form__input"
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </p>
+           
+          <p class="contact-form__field">
+            <label class="contact-form__label" for="email"
+              >E-post (obligatoriskt)</label
+            >
+            <input
+              class="contact-form__input"
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </p>
+           
+          <!-- Telefonnummer är frivilligt -->
+          <p class="contact-form__field">
+            <label class="contact-form__label" for="phone">Telefonnummer</label>
+            <input
+              class="contact-form__input"
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+            />
+          </p>
+           
+          <!-- Rullista där man väljer vad meddelandet gäller -->
+          <p class="contact-form__field">
+            <label class="contact-form__label" for="subject"
+              >Vad gäller det? (obligatoriskt)</label
+            >
+            <select
+              class="contact-form__select"
+              id="subject"
+              name="subject"
+              required
+            >
+              <option value="">Välj ett ämne</option>
+              <option value="jobb">Jobberbjudande</option>
+              <option value="praktik">Praktik eller LIA</option>
+              <option value="samarbete">Samarbete i ett projekt</option>
+              <option value="ovrigt">Övrigt</option>
+            </select>
+          </p>
+           
+        </form>
+      </section>
+    </main>
   </body>
 </html>
