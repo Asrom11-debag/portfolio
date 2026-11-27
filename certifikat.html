@@ -1,36 +1,82 @@
 <!doctype html>
 <html lang="sv">
   <head>
+    <!-- Teckenkodning och anpassning till mobilskärmar -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Certifikat och språk – Sam Lind</title>
+    <!-- Beskrivning av sidan för sökmotorer -->
     <meta
       name="description"
       content="Certifikat, språkkunskaper och körkort som Sam Lind har, för arbetsgivare som söker en mjukvarutestare."
     />
+    <!-- Ikon, CSS och JavaScript (defer = körs när sidan laddats) -->
     <link rel="icon" href="images/favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <!-- Genväg till huvudinnehållet för tangentbordsanvändare -->
     <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
 
+    <!-- Sidhuvud med sidans namn och huvudmeny -->
     <header class="site-header">
       <p class="site-header__name">
         <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
       </p>
 
+      <!-- Huvudmenyn, aria-label beskriver menyn för skärmläsare -->
       <nav class="main-nav" aria-label="Huvudmeny">
-        <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
-           aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
+        <!-- Knapp som visar och döljer menyn med JavaScript -->
         <button
           type="button"
           class="main-nav__toggle"
           data-js-action="toggle-menu"
           aria-expanded="true"
           aria-controls="main-menu"
-        ></button>
+        >
+          > Meny
+        </button>
+
+        <!-- Menylänkar till sidorna i portfolion -->
+        <ul class="main-nav__list" id="main-menu" data-js-target="menu">
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="index.html">Om mig</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="kompetenser.html">Kompetenser</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="projekt.html">Projekt</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="utbildning.html"
+              >Utbildning och erfarenhet</a
+            >
+          </li>
+          <!-- Aktiv länk, aria-current visar att man är på certifikatsidan -->
+          <li class="main-nav__item">
+            <a
+              class="main-nav__link main-nav__link--active"
+              href="certifikat.html"
+              aria-current="page"
+              >Certifikat och språk</a
+            >
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="kontakt.html">Kontakt</a>
+          </li>
+        </ul>
       </nav>
     </header>
+
+    <!-- Huvudinnehållet, id="main" är dit skip-länken hoppar -->
+    <main class="page" id="main">
+      <h1 class="page__title">Certifikat och språk</h1>
+      <p class="page__intro">
+        Många arbetsgivare frågar efter certifikat och språk. Här samlar jag det
+        på ett ställe.
+      </p>
+    </main>
   </body>
 </html>
