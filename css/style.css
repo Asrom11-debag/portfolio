@@ -147,3 +147,132 @@
   min-height: 24px;
   line-height: 24px;
 }
+
+/* ===== DESIGN (frivilligt): bara klass-selektorer, så BEM-kontraktet håller ===== */
+
+/* Samma typsnitt, bredd och luft för sidhuvud, innehåll och sidfot */
+.site-header,
+.page,
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* Hoppa-länken syns bara när man tabbar till den */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 8px 12px;
+}
+
+/* Sidhuvud och meny på en rad */
+.site-header {
+  border-bottom: 3px solid #1e3a8a;
+}
+.site-header__link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+.main-nav__toggle {
+  display: none;
+}
+.main-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  list-style: none;
+  padding: 0;
+}
+.main-nav__link {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 600;
+}
+.main-nav__link--active {
+  border-bottom: 3px solid #1e3a8a;
+}
+
+/* Rubriker */
+.page__title {
+  color: #1e3a8a;
+}
+
+/* Profilbilden: mindre och med rundade hörn */
+.profile__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Projektkort som rutor */
+.project-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+/* Tabeller med linjer */
+.skills__table,
+.certificates__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.skills__heading,
+.skills__cell,
+.certificates__heading,
+.certificates__cell {
+  border-bottom: 1px solid #cbd5e1;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Knappar */
+.skills__filter-button,
+.projects__filter-button,
+.contact__copy-button,
+.contact-form__button {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 4px 4px 4px 0;
+  cursor: pointer;
+}
+
+/* Formulärfält under varandra */
+.contact-form__label {
+  display: block;
+  font-weight: 600;
+}
+.contact-form__label--inline {
+  display: inline;
+}
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border: 1px solid #64748b;
+  border-radius: 6px;
+}
+
+/* Sidfot */
+.site-footer {
+  border-top: 3px solid #1e3a8a;
+  margin-top: 32px;
+}
