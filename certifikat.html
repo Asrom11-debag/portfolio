@@ -34,8 +34,8 @@
           data-js-action="toggle-menu"
           aria-expanded="true"
           aria-controls="main-menu"
-        >
-          > Meny
+        
+          Meny
         </button>
 
         <!-- Menylänkar till sidorna i portfolion -->
@@ -122,6 +122,50 @@
           </tbody>
         </table>
       </section>
+      <!-- Språk som beskrivningslista, dt är språket och dd är nivån -->
+      <section class="languages" aria-labelledby="languages-heading">
+        <h2 class="languages__title" id="languages-heading">Språk</h2>
+        <dl class="languages__list">
+          <dt class="languages__name">Svenska</dt>
+          <dd class="languages__level">Modersmål</dd>
+          <dt class="languages__name">Engelska</dt>
+          <dd class="languages__level">
+            Mycket goda kunskaper i tal och skrift
+          </dd>
+          <dt class="languages__name">Tyska</dt>
+          <dd class="languages__level">Grundläggande kunskaper</dd>
+        </dl>
+      </section>
+
+      <!-- Övrig information, till exempel körkort -->
+      <section class="extras" aria-labelledby="extras-heading">
+        <h2 class="extras__title" id="extras-heading">Övrigt</h2>
+        <p class="extras__text">Jag har B-körkort.</p>
+      </section>
     </main>
+
+    <!-- Sidfot med copyright och kontaktlänkar -->
+    <footer class="site-footer">
+      <p class="site-footer__text">
+        © 2026 Sam Lind. Skolprojekt: portfolio för en fiktiv person.
+      </p>
+      <ul class="site-footer__list">
+        <li class="site-footer__item">
+          <a class="site-footer__link" href="mailto:sam.lind@example.com"
+            >Mejla Sam Lind</a
+          >
+        </li>
+        <li class="site-footer__item">
+          <a class="site-footer__link" href="https://www.linkedin.com/"
+            >Sam Lind på LinkedIn</a
+          >
+        </li>
+        <li class="site-footer__item">
+          <a class="site-footer__link" href="https://github.com/"
+            >Sam Lind på GitHub</a
+          >
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
