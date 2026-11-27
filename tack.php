@@ -7,3 +7,15 @@ $phone   = $_POST["phone"] ?? "";
 $subject = $_POST["subject"] ?? "";
 $reply   = $_POST["reply"] ?? "";
 $message = $_POST["message"] ?? "";
+
+// Gör om värdet från <select> till en text som går att läsa.
+if ($subject == "jobb") {
+    $subjectText = "ett jobberbjudande";
+} elseif ($subject == "praktik") {
+    $subjectText = "praktik eller LIA";
+} elseif ($subject == "samarbete") {
+    $subjectText = "ett samarbete i ett projekt";
+} else {
+    $subjectText = "något övrigt";
+}
+?>
