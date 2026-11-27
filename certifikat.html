@@ -77,6 +77,51 @@
         Många arbetsgivare frågar efter certifikat och språk. Här samlar jag det
         på ett ställe.
       </p>
+
+      <!-- Sektion med en tabell över certifikat -->
+      <section class="certificates" aria-labelledby="certificates-heading">
+        <h2 class="certificates__title" id="certificates-heading">
+          Certifikat
+        </h2>
+        <table class="certificates__table">
+          <caption class="certificates__caption">
+            Certifikat jag har tagit eller planerar att ta
+          </caption>
+          <!-- Tabellens rubrikrad, scope="col" visar att rubriken gäller kolumnen -->
+          <thead>
+            <tr class="certificates__row">
+              <th class="certificates__heading" scope="col">Certifikat</th>
+              <th class="certificates__heading" scope="col">Utfärdare</th>
+              <th class="certificates__heading" scope="col">Status</th>
+            </tr>
+          </thead>
+          <!-- En rad per certifikat, scope="row" visar att rubriken gäller raden -->
+          <tbody>
+            <tr class="certificates__row">
+              <th class="certificates__heading" scope="row">
+                Introduction to Cybersecurity
+              </th>
+              <td class="certificates__cell">Cisco Networking Academy</td>
+              <td class="certificates__cell">Klart 2025</td>
+            </tr>
+            <tr class="certificates__row">
+              <th class="certificates__heading" scope="row">
+                Python Essentials 1
+              </th>
+              <td class="certificates__cell">Cisco Networking Academy</td>
+              <td class="certificates__cell">Klart 2026</td>
+            </tr>
+            <!-- Planerat certifikat, egen klass så det kan stylas annorlunda -->
+            <tr class="certificates__row certificates__row--planned">
+              <th class="certificates__heading" scope="row">
+                ISTQB Foundation Level
+              </th>
+              <td class="certificates__cell">ISTQB</td>
+              <td class="certificates__cell">Planerat 2027</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
   </body>
 </html>
