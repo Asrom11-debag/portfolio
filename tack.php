@@ -2,7 +2,6 @@
 
 // Läs datan från formuläret. Nyckeln i $_POST är fältets name-attribut.
 // ?? "" betyder: om fältet saknas används en tom text i stället.
-
 $name    = $_POST["name"] ?? "";
 $email   = $_POST["email"] ?? "";
 $phone   = $_POST["phone"] ?? "";
@@ -11,7 +10,6 @@ $reply   = $_POST["reply"] ?? "";
 $message = $_POST["message"] ?? "";
 
 // Gör om värdet från <select> till en text som går att läsa.
-
 if ($subject == "jobb") {
     $subjectText = "ett jobberbjudande";
 } elseif ($subject == "praktik") {
@@ -21,7 +19,6 @@ if ($subject == "jobb") {
 } else {
     $subjectText = "något övrigt";
 }
-
 ?> 
 <!-- Härifrån är det vanlig HTML, med samma sidhuvud, meny och sidfot som de andra sidorna -->
 <!DOCTYPE html>
@@ -36,3 +33,5 @@ if ($subject == "jobb") {
   <script src="js/script.js" defer></script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
