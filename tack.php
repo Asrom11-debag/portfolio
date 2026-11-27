@@ -35,3 +35,29 @@ if ($subject == "jobb") {
 <body>
 
   <a class="skip-link" href="#main">Hoppa till huvudinnehållet</a>
+
+  <header class="site-header">
+    <p class="site-header__name">
+      <a class="site-header__link" href="index.html">Sam Lind – portfolio</a>
+    </p>
+
+    <nav class="main-nav" aria-label="Huvudmeny">
+      <!-- JS: När man klickar på knappen ska menyn (data-js-target="menu") visas eller döljas.
+           aria-expanded på knappen ska samtidigt ändras mellan "true" och "false". -->
+      <button type="button" class="main-nav__toggle"
+              data-js-action="toggle-menu"
+              aria-expanded="true"
+              aria-controls="main-menu">
+        Meny
+      </button>
+
+    <ul class="main-nav__list" id="main-menu" data-js-target="menu">
+        <li class="main-nav__item"><a class="main-nav__link" href="index.html">Om mig</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="kompetenser.html">Kompetenser</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="projekt.html">Projekt</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="utbildning.html">Utbildning och erfarenhet</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="certifikat.html">Certifikat och språk</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
