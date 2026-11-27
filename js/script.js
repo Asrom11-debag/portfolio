@@ -1,5 +1,5 @@
-// scrips.js - JavaScript-lagret (beteendet)
-// JS hittar sina element ENDAST via data-js-* krokar, aldrig via CSS-klasserna.
+// scripts.js - JavaScript-lagret (beteendet)
+// JS hittar sina elementet ENDAST via data-js-* krokar, aldrig via CSS-klasserna.
 // Då kan CSS-utvecklaren byta namn på klasser utan att java scrips slutar fungera.
 
 // 1.Visa och dölj meny (finns på alla sidor)
@@ -28,7 +28,7 @@ function setupFilter(actionName, targetName) {
   const buttons = document.querySelectorAll('[data-js-action="' + actionName + '"]');
   const target = document.querySelector('[data-js-target="' + targetName + '"]');
   
-  // Hämtar bara de rader/projekt som ligger inuti rätt target och har data-category attributet. Det är viktigt att vi inte hämtar alla rader/projekt på sidan, utan bara de som ligger i rätt container.
+  // Avbtyter funtionen om kroken inte finns på den här sidan.
   if (!target) {
     return; // Kroken finns inte på den här sidan.
   }
