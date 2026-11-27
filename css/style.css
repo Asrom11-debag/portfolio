@@ -1,0 +1,59 @@
+/* 1. style.css är CSS-lagret: det styr bara hur sidan SER UT.
+   Klassnamnen följer BEM: block, block__element och block__element--modifier.
+   Reglerna får vara tomma {} – uppgiften kräver bara klassnamnen som finns i HTML. */
+
+/* 2. Delar som finns på ALLA sidor: hoppa-länk, sidhuvud, meny, sidinnehåll och sidfot */
+.skip-link {}
+.site-header {}
+.site-header__name {}
+.site-header__link {}
+.main-nav {}
+.main-nav__toggle {}
+.main-nav__list {}
+.main-nav__item {}
+.main-nav__link {}
+/* 3. Modifier (--): markerar länken till den sida man är på */
+.main-nav__link--active {}
+.page {}
+.page__title {}
+.page__intro {}
+.site-footer {}
+.site-footer__text {}
+.site-footer__list {}
+.site-footer__item {}
+.site-footer__link {}
+
+/* 4. Om mig (index.html) */
+.profile {}
+.profile__title {}
+.profile__figure {}
+.profile__image {}
+.profile__caption {}
+.profile__text {}
+.goals {}
+.goals__title {}
+.goals__text {}
+.goals__list {}
+.goals__item {}
+.shortcuts {}
+.shortcuts__title {}
+.shortcuts__list {}
+.shortcuts__item {}
+.shortcuts__link {}
+
+/* 5. Kompetenser (kompetenser.html) */
+.skills {}
+.skills__title {}
+.skills__filter {}
+.skills__filter-button {}
+.skills__table {}
+.skills__caption {}
+.skills__head {}
+.skills__body {}
+.skills__row {}
+.skills__heading {}
+.skills__cell {}
+.soft-skills {}
+.soft-skills__title {}
+.soft-skills__list {}
+.soft-skills__item {}
