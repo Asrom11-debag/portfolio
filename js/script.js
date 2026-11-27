@@ -1,5 +1,5 @@
-// scrips.js - JavaScript-lagret (beteendet)
-// JS hittar sina element ENDAST via data-js-* krokar, aldrig via CSS-klasserna.
+// scripts.js - JavaScript-lagret (beteendet)
+// JS hittar sina elementet ENDAST via data-js-* krokar, aldrig via CSS-klasserna.
 // Då kan CSS-utvecklaren byta namn på klasser utan att java scrips slutar fungera.
 
 // 1.Visa och dölj meny (finns på alla sidor)
@@ -28,7 +28,7 @@ function setupFilter(actionName, targetName) {
   const buttons = document.querySelectorAll('[data-js-action="' + actionName + '"]');
   const target = document.querySelector('[data-js-target="' + targetName + '"]');
   
-  // Hämtar bara de rader/projekt som ligger inuti rätt target och har data-category attributet. Det är viktigt att vi inte hämtar alla rader/projekt på sidan, utan bara de som ligger i rätt container.
+  // Avbtyter funtionen om kroken inte finns på den här sidan.
   if (!target) {
     return; // Kroken finns inte på den här sidan.
   }
@@ -49,3 +49,45 @@ function setupFilter(actionName, targetName) {
           items[j].hidden = true;
         }
       }
+
+            // Markera vilken knapp som är vald.(viktigt för skärmläsare via aria-pressed och för att visa användaren vilken knapp som är vald)
+      for (let k = 0; k < buttons.length; k++) {
+        buttons[k].setAttribute("aria-pressed", "false");
+      }
+      buttons[i].setAttribute("aria-pressed", "true");
+    });
+  }
+}
+
+//Kör samma återanvändbara funktion för både komptenssidan och projektsidan 
+setupFilter("filter-skills", "skill-list");
+setupFilter("filter-projects", "project-list");
+
+
+// 4. Kopiera e-postadressen (kontaktsidan)
+const copyButton = document.querySelector('[data-js-action="copy-email"]');
+const copyMessage = document.querySelector('[data-js-target="copy-message"]');
+
+if (copyButton && copyMessage) {
+  copyButton.addEventListener("click", function () {
+    const email = copyButton.dataset.email;
+    //Webbläsaren inbyggda API som kopierar texten till användaren urklipp
+    navigator.clipboard.writeText(email);
+    // text Content skriver ut bekräftelsen säkert som ren text i target-elementet.
+    copyMessage.textContent = "E-postadressen " + email + " är kopierad.";
+  });
+}
+
+
+// 5. Räkna tecken i meddelandet (kontaktsidan)
+const messageField = document.querySelector('[data-js-action="count-characters"]');
+const characterCount = document.querySelector('[data-js-target="character-count"]');
+
+if (messageField && characterCount) {
+    // Händelsen "input" körs varje gång användaren skriver in eller tar bort ett tecken i textfältet.
+  messageField.addEventListener("input", function () {
+    // HTML-attributet data-max-length skrivs om till camelCase (maxLength) i databaset
+    const max = messageField.dataset.maxLength;
+    characterCount.textContent = messageField.value.length + " av " + max + " tecken.";
+  });
+}
