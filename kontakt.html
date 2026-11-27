@@ -61,8 +61,8 @@
             <a class="main-nav__link" href="certifikat.html"
               >Certifikat och språk</a
             >
-            <!-- Aktiv länk, aria-current visar att man är på kontaktsidan -->
           </li>
+          <!-- Aktiv länk, aria-current visar att man är på kontaktsidan -->
           <li class="main-nav__item">
             <a
               class="main-nav__link main-nav__link--active"
@@ -188,6 +188,68 @@
               <option value="samarbete">Samarbete i ett projekt</option>
               <option value="ovrigt">Övrigt</option>
             </select>
+          </p>
+
+          <!-- Radioknappar där man väljer om svaret ska komma via e-post eller telefon -->
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-form__legend">
+              Hur vill du att jag svarar?
+            </legend>
+            <p class="contact-form__option">
+              <input
+                class="contact-form__radio"
+                type="radio"
+                id="reply-email"
+                name="reply"
+                value="e-post"
+                checked
+              />
+              <label
+                class="contact-form__label contact-form__label--inline"
+                for="reply-email"
+                >Via e-post</label
+              >
+            </p>
+            <p class="contact-form__option">
+              <input
+                class="contact-form__radio"
+                type="radio"
+                id="reply-phone"
+                name="reply"
+                value="telefon"
+              />
+              <label
+                class="contact-form__label contact-form__label--inline"
+                for="reply-phone"
+                >Via telefon</label
+              >
+            </p>
+          </fieldset>
+
+          <!-- Textfält för meddelandet, JavaScript räknar tecknen (max 500) -->
+          <p class="contact-form__field">
+            <label class="contact-form__label" for="message"
+              >Meddelande (obligatoriskt)</label
+            >
+            <textarea
+              class="contact-form__textarea"
+              id="message"
+              name="message"
+              rows="6"
+              maxlength="500"
+              required
+              aria-describedby="message-help"
+              data-js-action="count-characters"
+              data-max-length="500"
+            ></textarea>
+          </p>
+          <p
+            class="contact-form__help"
+            id="message-help"
+            data-js-target="character-count"
+            aria-live="polite"
+          >
+            Högst 500 tecken.
           </p>
 
           <!-- Knapp som skickar formuläret -->
